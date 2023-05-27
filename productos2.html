@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="esti.css">
+	<title>productos</title>
+</head>
+<body>
+	<div class="container">
+		<h3 class="title">Nuestros Productos</h3>
+		<div class="products-container">
+<!-- -->			<div class="product" data-name="p-1">
+				<img src="C:/Users/TEMP.DESKTOP-0HJC4LF.004/Desktop/UTN-FRH/index/prod2/imagenes/tx.jpg" alt="">
+				<h3>3070 rtx 3080 8GB 12GB GPU</h3>
+				<div class="price">$352.20</div>
+<!-- -->			</div>
+			<div class="product" data-name="p-2">
+				<img src="C:/Users/TEMP.DESKTOP-0HJC4LF.004/Desktop/UTN-FRH/index/prod2/imagenes/mr.jpg" alt="">
+				<h3>Memoria RAM DDR3 8GB 16GB 2x8GB</h3>
+				<div class="price">$9.68</div>
+			</div>
+			<div class="product" data-name="p-3">
+				<img src="C:/Users/TEMP.DESKTOP-0HJC4LF.004/Desktop/UTN-FRH/index/prod2/imagenes/tggg.jpg" alt="">
+				<h3>GeForce GT730 Shadow 2G V2</h3>
+				<div class="price">$89.46</div>
+			</div>
+		</div> 
+	</div>	
+	<div class="products-preview">
+<!-- -->		<div class="preview" data-target="p-1">
+			<i class="fas fa-times"></i>
+			<img src="C:/Users/TEMP.DESKTOP-0HJC4LF.004/Desktop/UTN-FRH/index/prod2/imagenes/tx.jpg" alt="">
+			<h3>Tarjeta gráfica colorida GDDR6X rtx 3060 3060Ti rtx 3070 rtx 3080 8GB 12GB GPU para videojuegos, placa de vídeo LHR de 256 bits</h3>
+			<div class="stars">
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star-half-alt"></i>
+			</div>
+			<div class="price">$352.20</div>
+			<div class="buttons">
+				<a href="https://s.click.aliexpress.com/e/_DD9HwGz" target="_blank" class="buy">Enlace del Producto</a>
+			</div>
+<!-- -->		</div>
+		<div class="preview" data-target="p-2">
+			<i class="fas fa-times"></i>
+			<img src="C:/Users/TEMP.DESKTOP-0HJC4LF.004/Desktop/UTN-FRH/index/prod2/imagenes/mr.jpg" alt="">
+			<h3>Memoria RAM DDR3 8GB 16GB 2x4GB (2x8GB) Kit 1866MHz 1600MHz 1333MHz Escritorio RAM PC3-12800 14900 1.5V DIMM 240Pin DDR3 PC Memoria</h3>
+			<div class="stars">
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star-half-alt"></i>
+			</div>
+			<div class="price">$9.68</div>
+			<div class="buttons">
+				<a href="https://s.click.aliexpress.com/e/_DCefpkh" target="_blank" class="buy">Enlace del Producto</a>
+			</div>
+		</div>
+		<div class="preview" data-target="p-3">
+			<i class="fas fa-times"></i>
+			<img src="C:/Users/TEMP.DESKTOP-0HJC4LF.004/Desktop/UTN-FRH/index/prod2/imagenes/tggg.jpg" alt="">
+			<h3>GALAXY nueva tarjeta gráfica GeForce GT730 Shadow 2G V2 GT 730 GDDR3 NVIDIA 28NM 2GB Gaming 64Bit tarjeta de vídeo placa de vídeo</h3>
+			<div class="stars">
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star-half-alt"></i>
+			</div>
+			<div class="price">$89.46</div>
+			<div class="buttons">
+				<a href="https://s.click.aliexpress.com/e/_DlZEWUH" target="_blank" class="buy">Enlace del Producto</a>
+			</div>
+		</div>
+	</div>	
+	
+
+	
+	
+<script type="text/javascript">
+	
+	let preveiwContainer = document.querySelector('.products-preview');
+	let previewBox = preveiwContainer.querySelectorAll('.preview');
+
+	document.querySelectorAll ('.products-container .product').forEach(product => {
+		product.onclick = () => {
+			preveiwContainer.style.display = 'flex';
+			let name = product.getAttribute('data-name');
+			previewBox.forEach(preview => {
+				let target = preview.getAttribute('data-target');
+				if (name == target) {
+					preview.classList.add('active');
+				}
+			});
+		};
+	});
+
+	previewBox.forEach(close => {
+		close.querySelector('.fa-times').onclick= () =>{
+			close.classList.remove('active');
+			preveiwContainer.style.display = 'none';
+		};
+	});
+
+</script>
+
+</body>
+</html>
